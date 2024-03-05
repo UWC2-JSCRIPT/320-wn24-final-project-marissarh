@@ -1,5 +1,6 @@
 import "./App.css"
-import { Router } from "react-router-dom"
+import { Router, Routes, Route } from "react-router-dom"
+import Navbar from './Navbar/Navbar'
 
 
 
@@ -26,6 +27,20 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <Routes>
+          <Route path="/hourly">
+            <Hourly />
+            </Route>
+          <Route path="/eight-day">
+            <EightDay />
+            </Route>
+          <Route path="/weekend">
+            <Weekend/>
+            </Route>
+          <Route path="/">
+            <Home />
+            </Route>
+        </Routes>
       </div>
     </Router>
     
