@@ -7,6 +7,7 @@ function WeatherDisplay({cityName, currentTemp, weatherCondition, highTemp, lowT
             {cityName}
         </h2>
         <p>{currentTemp}°C</p>
+        <p>Current Temperature</p>
         <p>{weatherCondition}</p>
         <p>High{highTemp}°C</p>
         <p>Low{lowTemp}°C</p>
