@@ -30,8 +30,10 @@ function Home() {
         value={location} 
         onChange= {(e) => 
             setLocation(e.target.value)} />
+            <button onClick={searchWeather}>Search</button>
+            {weatherData && <WeatherCard data={weatherData}/>}
         </div>
-  )
+  );
 }
 
 export default Home

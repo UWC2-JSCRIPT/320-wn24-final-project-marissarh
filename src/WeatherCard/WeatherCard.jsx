@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState} from 'react'
+
+function TempConverter({ temperature }) {
+  const [isFahrenheit, setIsFahrenheit] = useState(true);
+}
 
 const WeatherCard = ({ weatherData }) => {
+
   return (
     <div>
         <h3>{weatherData.name}</h3>

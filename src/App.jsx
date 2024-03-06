@@ -1,6 +1,7 @@
 import "./App.css"
 import { Router, Routes, Route } from "react-router-dom"
 import Navbar from './Navbar/Navbar'
+import Home from './Home/Home'
 
 
 
@@ -19,7 +20,7 @@ function EightDay() {
 function Weekend() {
   return (
     
-      <h2>Weekend Forecast</h2>
+      <h2 >Weekend Forecast</h2>
   )
 }
 function App() {
