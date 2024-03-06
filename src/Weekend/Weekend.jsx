@@ -1,9 +1,17 @@
 import React from 'react'
+import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 
 function Weekend() {
+    const weather = {
+        cityName:'London',
+        currentTemp: '10',
+        weatherCondition:'Cloudy',
+        highTemp: 12,
+        lowTemp: 5,
+    }
   return (
     <div>
-        <h2>Weekend</h2>
+        <WeatherDisplay{...weather} />
         </div>
   )
 }

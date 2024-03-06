@@ -1,9 +1,17 @@
 import React from 'react'
+import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 
 function Hourly() {
+    const weather = {
+        cityName:'Paris',
+        currentTemp: '20',
+        weatherCondition:'Cloudy',
+        highTemp: 25,
+        lowTemp: 5,
+    }
   return (
     <div>
-        <h2>Hourly Forecast</h2>
+        <WeatherDisplay{...weather} />
         </div>
   )
 }
