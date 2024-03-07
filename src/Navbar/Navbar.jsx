@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import HomeIcon from '../Img/HomeIcon.png'
+import './Navbar.css'
 
 const Navbar = () =>{
     return (
         <nav>
-            <ul>
-                <li>
-                <Link to ="/">Home</Link>
-                </li>
+            <div className='navbar'>
+             <div className='nav-logo'>
+                <Link to ="/"><img src={HomeIcon}/></Link>
+                <p>Sky Forecast</p>
+                </div>
+                <ul className='nav-menu'>
                 <li>
                 <Link to ="/hourly">Hourly</Link>
                 </li>
@@ -18,6 +22,7 @@ const Navbar = () =>{
                 <Link to ="/weekend">Weekend</Link>
                 </li>
             </ul>
+            </div>
         </nav>
     );
 };

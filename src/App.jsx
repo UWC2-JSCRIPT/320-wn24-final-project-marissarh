@@ -9,6 +9,7 @@ import Weekend from "./Weekend/Weekend";
 
 
 
+
 function App() {
   return (
     <Router>
@@ -21,7 +22,7 @@ function App() {
             </Route>
           <Route path="/weekend" Component={Weekend}>
             </Route>
-          <Route path="/" Component={Home}>
+          <Route path="/" Component={Home} >
             </Route>
         </Routes>
       </div>
