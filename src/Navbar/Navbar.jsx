@@ -9,11 +9,11 @@ const Navbar = () =>{
             <div className='navbar'>
              <div className='nav-logo'>
                 <Link to ="/"><img src={HomeIcon}/></Link>
-                <p>Sky Forecast</p>
-                </div>
+                </div> 
+                
                 <ul className='nav-menu'>
                 <li>
-                <Link to ="/hourly">Hourly</Link>
+                <Link to ="/hourly">Hourly<hr/></Link>
                 </li>
                 <li>
                 <Link to ="/eight-Day">8-Day</Link>

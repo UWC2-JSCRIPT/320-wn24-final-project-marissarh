@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-
-
-
-
+import './Home.css'
 
 const API_KEY = '7649b28c3542d28d3b3866ddf149b2aa'
 
@@ -26,8 +23,11 @@ function Home() {
 
     return (
     <div>
-        
-        <h2>Home</h2>
+        <div className='container'>
+            <div className='search-box'> 
+            <div className='header'>
+        <h2>Sky Forecast</h2></div>
+        <div className='search'>
         <input 
         type="text" 
         placeholder="Enter Location" 
@@ -36,6 +36,9 @@ function Home() {
             setLocation(e.target.value)} />
             <button onClick={searchWeather}>Search</button>
             {weatherData && <WeatherCard data={weatherData}/>}
+        </div>
+        </div>
+        </div>
         </div>
   );
 }
