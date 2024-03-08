@@ -3,6 +3,7 @@
     justify-content:space-around;
     padding: 10px;
     box-shadow: 0 1px 3px -2px black;
+    
 
 
 }
@@ -23,11 +24,11 @@
     display: flex;
     border: none;
     align-items: center;
-    list-style: none;
     gap: 50px;
     color: rgb(114, 168, 239);
-    font-size: 20px;
-    font-weight: 500px;
+    font-size: 25px;
+    font-weight: 700;
+    
     
 }
 .nav-menu li{
@@ -38,6 +39,9 @@
     gap: 3px; 
     cursor: pointer;
     
+    
+
+    
 }
 .nav-menu hr{
     border: none;
@@ -46,4 +50,5 @@
     height: 3px;
     border-radius: 10px;
     background: rgb(226, 148, 199);
+    
 }
