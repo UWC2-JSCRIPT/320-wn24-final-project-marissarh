@@ -33,10 +33,11 @@ function Home() {
         placeholder="Enter Location" 
         value={location} 
         onChange= {(e) => 
-            setLocation(e.target.value)} />
+            setLocation(e.target.value)} /> </div> <br/>
+            <div className='btn'>
             <button onClick={searchWeather}>Search</button>
             {weatherData && <WeatherCard data={weatherData}/>}
-        </div>
+       </div>
         </div>
         </div>
         </div>
