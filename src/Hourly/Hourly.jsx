@@ -30,19 +30,10 @@ function Hourly() {
             <p>High 20°C</p>
             <p>Low°C</p>
         </div>
-            <div className='hourly-card'>
-            {everyHour.map((data, index) => (
-                <WeatherDisplay
-                key={index}
-                currentTemp={`${data.currentTemp}`}
-                weatherCondition={data.weatherCondition}
-                highTemp={data.highTemp}
-                lowTemp={data.lowTemp}  
-                />             
-                ))}
+           
         </div>
         </div>
-        </div>
+        
   );
 }
 

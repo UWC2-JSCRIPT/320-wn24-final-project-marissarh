@@ -3,9 +3,6 @@
     justify-content:space-around;
     padding: 10px;
     box-shadow: 0 1px 3px -2px black;
-   
-    
-
 
 }
 .nav-logo{
@@ -32,6 +29,7 @@
     
     
     
+    
 }
 .nav-menu li{
     display: flex;
@@ -40,6 +38,7 @@
     justify-content: center;
     gap: 3px; 
     cursor: pointer;
+    color:  rgb(233, 135, 236);
     background-color: rgb(231, 230, 230);
     padding: 10px;
     border-radius: 8%;

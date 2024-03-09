@@ -67,6 +67,7 @@ function EightDay() {
         {sevenDayWeather.map((data, index) => (
             < WeatherDisplay 
             key={index}
+            img={data.img}
             day={data.day}
             date={data.date}
             currentTemp={`${data.currentTemp}`}
