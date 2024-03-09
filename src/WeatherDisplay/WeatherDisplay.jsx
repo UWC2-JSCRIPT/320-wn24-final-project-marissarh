@@ -6,7 +6,7 @@ function WeatherDisplay({ weather:{details, icon, temp_min, temp_max, name, time
   return (
     <div>
         <h2>
-            {{name}}
+            {`${name}`}
         </h2>
         <div className='displayData'>
         <div className='date'>

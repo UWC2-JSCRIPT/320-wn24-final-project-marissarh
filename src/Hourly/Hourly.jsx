@@ -2,33 +2,20 @@ import React from 'react'
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 import './Hourly.css'
 
-const city= 'Paris'
-
-function Hourly() {
-    const everyHour = [
-        { time: '12:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '1:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '2:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '3:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '4:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '5:00 PM', temperature: 20, condition: 'Sunny'},
-        { time: '6:00 PM', temperature: 20, condition: 'Sunny'},
-        
-    ];
-
-    
+function Hourly({weather:{dt, timezone, temp_min, temp_max, details, icon}}) 
+{
     
   return (
     <div>
+        <h2>Hourly Sky Forecast</h2>
+        <WeatherDisplay/>
         <div className='hourly'>
-            <h2>Hourly Sky Forecast</h2>
-            <div className='city'><p>{city}</p></div>
             <div className='weekendCardTop'>
-            <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
-            <p>18°C</p>
-            <p>Cloudy</p>
-            <p>High 20°C</p>
-            <p>Low°C</p>
+            <img src={iconUrl(icon)} alt="weather-icon"></img>
+            <p>{`${temp.toFixed()}°`}</p>
+            <p>{`${details}`}</p>
+            <p>High {`${temp_max.toFixed()}°`}</p>
+            <p>Low {`${temp_min.toFixed()}°`}</p>
         </div>
            
         </div>

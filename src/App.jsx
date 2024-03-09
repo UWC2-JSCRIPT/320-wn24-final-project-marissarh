@@ -7,6 +7,7 @@ import EightDay from "./EightDay/EightDay";
 import Weekend from "./Weekend/Weekend";
 import getFormattedWeatherData from "./FetchedData/FetchedData";
 import { useEffect, useState } from "react";
+import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
 
 
 
@@ -36,15 +37,17 @@ function App() {
       <div>
         <Navbar />
         <Routes>
+          <Route path="/" Component={Home} >
+            </Route>
         {weather && (<div>
-          <Route path="/hourly" Component={Hourly} weather={weather}>
+          <Route path="/hourly" Component={Hourly}>
+            
             </Route>
           <Route path="/eight-day" Component={EightDay} weather={weather}>
             </Route>
           <Route path="/weekend" Component={Weekend} weather={weather}>
             </Route></div>)}
-          <Route path="/" Component={Home} >
-            </Route>
+          
         </Routes>
       </div>
     </Router>
