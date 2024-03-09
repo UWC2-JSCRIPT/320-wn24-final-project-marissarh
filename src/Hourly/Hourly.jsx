@@ -17,12 +17,13 @@ function Hourly() {
     ];
 
     
+    
   return (
     <div>
         <div className='hourly'>
             <h2>Hourly Sky Forecast</h2>
             <p>{city}</p>
-            <div>
+            <div className='card'>
             {everyHour.map((data, index) => (
                 <WeatherDisplay
                 key={index}
