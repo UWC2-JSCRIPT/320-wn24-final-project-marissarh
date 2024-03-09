@@ -60,5 +60,11 @@ h2{
     width: 100px;
     height: 40px;
     font-size: 20px;
+   
     
+}
+.btn button:hover{
+    
+    transition: ease-out;
+    scale: 1.2;
 }

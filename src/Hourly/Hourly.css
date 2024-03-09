@@ -1,0 +1,6 @@
+.container{
+    display:flexbox;
+    justify-content:space-around;
+    align-items: center;
+    color: blue;
+}

@@ -1,34 +1,39 @@
 import React from 'react'
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
-import './Hourly'
+import './Hourly.css'
 
 const city= 'Paris'
 
 function Hourly() {
-    const weather = [
+    const everyHour = [
         { time: '12:00 PM', temperature: 20, condition: 'Sunny'},
         { time: '1:00 PM', temperature: 20, condition: 'Sunny'},
         { time: '2:00 PM', temperature: 20, condition: 'Sunny'},
+        { time: '3:00 PM', temperature: 20, condition: 'Sunny'},
+        { time: '4:00 PM', temperature: 20, condition: 'Sunny'},
+        { time: '5:00 PM', temperature: 20, condition: 'Sunny'},
+        { time: '6:00 PM', temperature: 20, condition: 'Sunny'},
         
     ];
 
     
   return (
     <div>
-        <div className='container'>
-            <h2>{city} Hourly Forecast</h2>
-            {weather.map((data, index)=>(
+        <div className='hourly'>
+            <h2>Hourly Sky Forecast</h2>
+            <p>{city}</p>
+            <div>
+            {everyHour.map((data, index) => (
                 <WeatherDisplay
                 key={index}
-                cityName={data.name}
-                currentTemp={data.main[0].temp}
-                weatherCondition={data.weather[1]}
-                highTemp={data.main[3]}
-                lowTemp={data.main[2]}  
+                currentTemp={`${data.currentTemp}`}
+                weatherCondition={data.weatherCondition}
+                highTemp={data.highTemp}
+                lowTemp={data.lowTemp}  
                 />             
                 ))}
         </div>
-        </div>
+        </div></div>
   );
 }
 
