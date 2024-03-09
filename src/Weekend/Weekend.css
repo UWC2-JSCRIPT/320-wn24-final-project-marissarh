@@ -1,0 +1,26 @@
+.weekendCard {
+    background-color: rgb(231, 230, 230);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    grid-template-columns: 3fr auto auto;
+    gap: 10px;
+
+    justify-content: space-evenly;
+    
+}
+.weekendCardTop {
+    background-color: rgb(231, 230, 230);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    grid-template-columns: 3fr auto auto;
+    gap: 10px;
+    justify-content: center;
+    
+    
+}

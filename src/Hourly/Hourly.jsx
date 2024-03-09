@@ -22,8 +22,15 @@ function Hourly() {
     <div>
         <div className='hourly'>
             <h2>Hourly Sky Forecast</h2>
-            <p>{city}</p>
-            <div className='card'>
+            <div className='city'><p>{city}</p></div>
+            <div className='weekendCardTop'>
+            <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
+            <p>18°C</p>
+            <p>Cloudy</p>
+            <p>High 20°C</p>
+            <p>Low°C</p>
+        </div>
+            <div className='hourly-card'>
             {everyHour.map((data, index) => (
                 <WeatherDisplay
                 key={index}
@@ -34,7 +41,8 @@ function Hourly() {
                 />             
                 ))}
         </div>
-        </div></div>
+        </div>
+        </div>
   );
 }
 
