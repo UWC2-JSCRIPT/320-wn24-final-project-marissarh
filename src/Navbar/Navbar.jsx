@@ -14,12 +14,12 @@ function Navbar({units, setUnits}){
             <div className='navbar'>
              <div className='nav-logo'>
                 <Link to ="/"><img src={HomeIcon}/></Link>
-                <div>
+                <div className='tempUnits'>
                 <button name="metric" onClick={handleUnitsChange}>°C</button>
+                
                 <button name="imperial" onClick={handleUnitsChange}>°F</button>
                 </div> 
                 </div>
-                
                 <ul className='nav-menu'>
                 <li>
                 <Link to ="/hourly">Hourly</Link>

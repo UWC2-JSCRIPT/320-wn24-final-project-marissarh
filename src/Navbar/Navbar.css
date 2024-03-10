@@ -2,7 +2,7 @@
     display: flex;
     justify-content:space-around;
     padding: 10px;
-    box-shadow: 0 1px 3px -2px black;
+    box-shadow: 0 2px 4px -2px rgb(26, 26, 26);
 
 }
 .nav-logo{
@@ -23,12 +23,9 @@
     border: none;
     align-items: center;
     gap: 50px;
-    color: rgb(114, 168, 239);
     font-size: 25px;
     font-weight: 700;
-    
-    
-    
+
     
 }
 .nav-logo button{
@@ -41,9 +38,21 @@
     justify-content: center;
     gap: 3px; 
     cursor: pointer;
-    color:  rgb(233, 135, 236);
-    background-color: rgb(231, 230, 230);
+    border: 2px solid rgb(236, 185, 254);
+    background-color: rgb(213, 213, 246);
     padding: 10px;
     border-radius: 8%;
     
+}
+.tempUnits button{
+    border: 2px solid rgb(236, 185, 254);
+    background-color: rgb(213, 213, 246);
+    margin: 2px;
+    padding: 8px;
+    color: rgb(109, 109, 248);
+    font-weight: bold;
+}
+a{
+    color: rgb(109, 109, 248);
+
 }

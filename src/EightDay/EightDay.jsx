@@ -15,7 +15,6 @@ function EightDay({ weather:
         <div>
         <div>
         <h2>8-Day Sky Forecast</h2>
-        {items.map((item))=> (
         <p className='city'>{`${name}`}</p>
         <div className='displayData'>
         <div className='date'>
@@ -24,19 +23,11 @@ function EightDay({ weather:
         <div className='display'>
         <p className='tempImg'><img src={iconUrl(icon)} alt="weather-icon"></img></p>
         <p className='currentTemp'>{`${temp.toFixed()}`}°</p>
-        </div></div>
-        
-        ))}
-        {items.map((item, index) =>(
-            <p className='condition'>{details}</p>
-        <div className='temp'>
-        <p className='highTemp'>High{`${temp_max.toFixed()}`}°C</p>
-        <p className='lowTemp'>Low{`${temp_min.toFixed()}`}°C</p>
-        </div> 
         </div>
-        ))}
         </div>
-        
+        </div>
+        </div>
+
    
         <div className='weekendCardTop'>
             <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
@@ -44,6 +35,8 @@ function EightDay({ weather:
             <p>Cloudy</p>
             <p>High 20°C</p>
             <p>Low°C</p>
-        </div>}
+       </div>
+       </div>
+       )}
         
 export default EightDay
