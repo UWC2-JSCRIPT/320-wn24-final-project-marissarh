@@ -31,6 +31,9 @@
     
     
 }
+.nav-logo button{
+    cursor: pointer;
+}
 .nav-menu li{
     display: flex;
     flex-direction: column;

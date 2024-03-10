@@ -7,7 +7,7 @@ import EightDay from "./EightDay/EightDay";
 import Weekend from "./Weekend/Weekend";
 import getFormattedWeatherData from "./FetchedData/FetchedData";
 import { useEffect, useState } from "react";
-import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
+
 
 
 
@@ -25,7 +25,7 @@ function App() {
           });
       } catch (error) {
           console.log('Error fetching weather data', error);
-          console.log(data);
+          
       }
     
         };
@@ -39,14 +39,12 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} >
             </Route>
-        {weather && (<div>
           <Route path="/hourly" Component={Hourly}>
-            
+            </Route>     
+          <Route path="/eight-day" Component={EightDay} >
             </Route>
-          <Route path="/eight-day" Component={EightDay} weather={weather}>
+          <Route path="/weekend" Component={Weekend}>
             </Route>
-          <Route path="/weekend" Component={Weekend} weather={weather}>
-            </Route></div>)}
           
         </Routes>
       </div>

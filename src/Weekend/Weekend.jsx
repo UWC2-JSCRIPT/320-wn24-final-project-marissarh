@@ -1,28 +1,10 @@
 import React from 'react'
-import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 import './Weekend.css'
+import FetchedData from'../FetchedData/FetchedData'
 
 
-const city = 'Paris'
-function Weekend() {
-    const weekendWeather = [
-        {
-            day: 'Friday',
-            temp:'10',
-            weatherimg: '*',
-        },
-        {
-            day: 'Saturday',
-            temp:'10',
-            weatherimg: '*',
-        },
-        {
-            day: 'Sunday',
-            temp:'10',
-            weatherimg: '*',
-        },
-       
-    ]
+function Weekend({ weather:
+    {details, temp, icon, temp_min, temp_max, name, timezone, dt, country}}){
   return (
     <div>
         <h2>Weekend Sky Forecast</h2>
@@ -35,11 +17,8 @@ function Weekend() {
             <p>Low°C</p>
         </div>
         <div className='weekendCard'>
-        {weekendWeather.map((data, index) => (
-            <WeatherDisplay
-            key={index}
-            currentTemp={`${data.currentTemp}`} />
-        ))}
+        
+    
         </div>
         </div>
   )

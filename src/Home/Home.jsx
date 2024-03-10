@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Home.css'
-import getFormattedWeatherData from '../FetchedData/FetchedData';
 
+function Home({setSearch}) {
+    const [city, setCity] = useState("");
+   const handleSearchClick = () =>{
 
-function Home() {
-
+    if (city !=="") setSearch({q:city});
+   };
 
     return (
     <div>
@@ -16,11 +18,11 @@ function Home() {
         <input 
         type="text" 
         placeholder="Enter Location" 
-       
+        value={city}
         onChange= {(e) => 
-            setLocation(e.target.value)} /> </div> <br/>
+            setCity(e.currentTarget.value)} /> </div> <br/>
             <div className='btn'>
-            <button onClick={getFormattedWeatherData}>Search</button>
+            <button onClick={handleSearchClick}>Search</button>
             
        </div>
         </div>

@@ -1,82 +1,49 @@
 import React from 'react'
-import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
+
 import './EightDay.css'
+import { formatToLocalTime, iconUrl } from '../FetchedData/FetchedData'
 
-const city = 'London'
 
-function EightDay() {
-    const sevenDayWeather = [
-        {
-            day: 'Monday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Tuesday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Wednesday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Thursday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Friday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Saturday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        },
-        {
-            day: 'Sunday',
-            date: '12/12',
-            highTemp: 25,
-            lowTemp:10,
-        }
-        
-    ]
-        
+
+function EightDay({ weather:
+    {details, temp, icon, temp_min, temp_max, name, timezone, dt, country}})
+    
+    {
     
   return (
     <div>
+        <div>
+        <div>
         <h2>8-Day Sky Forecast</h2>
-        <p className='city'>{city}</p>
+        {items.map((item))=> (
+        <p className='city'>{`${name}`}</p>
+        <div className='displayData'>
+        <div className='date'>
+        <h3>{formatToLocalTime(dt, timezone)}</h3>
+        </div>
+        <div className='display'>
+        <p className='tempImg'><img src={iconUrl(icon)} alt="weather-icon"></img></p>
+        <p className='currentTemp'>{`${temp.toFixed()}`}°</p>
+        </div></div>
+        
+        ))}
+        {items.map((item, index) =>(
+            <p className='condition'>{details}</p>
+        <div className='temp'>
+        <p className='highTemp'>High{`${temp_max.toFixed()}`}°C</p>
+        <p className='lowTemp'>Low{`${temp_min.toFixed()}`}°C</p>
+        </div> 
+        </div>
+        ))}
+        </div>
+        
+   
         <div className='weekendCardTop'>
             <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
             <p>18°C</p>
             <p>Cloudy</p>
             <p>High 20°C</p>
             <p>Low°C</p>
-        </div>
-        <div className='eightCard'>
-        {sevenDayWeather.map((data, index) => (
-            < WeatherDisplay 
-            key={index}
-            img={data.img}
-            day={data.day}
-            date={data.date}
-            currentTemp={`${data.currentTemp}`}
-            highTemp={data.highTemp}
-            lowTemp={data.lowTemp} 
-             />
-        ))}</div>
-        </div>
-  );
-  
-        }
+        </div>}
+        
 export default EightDay
