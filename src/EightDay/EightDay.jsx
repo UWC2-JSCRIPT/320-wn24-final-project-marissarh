@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FetchedData from '../FetchedData/FetchedData'
 import './EightDay.css'
 import { formatToLocalTime, iconUrl } from '../FetchedData/FetchedData'
 
@@ -12,6 +12,7 @@ function EightDay({ weather:
     
   return (
     <div>
+        <FetchedData />
         <div>
         <div>
         <h2>8-Day Sky Forecast</h2>
@@ -22,7 +23,7 @@ function EightDay({ weather:
         </div>
         <div className='display'>
         <p className='tempImg'><img src={iconUrl(icon)} alt="weather-icon"></img></p>
-        <p className='currentTemp'>{`${temp.toFixed()}`}°</p>
+        <p className='currentTemp'><span>{`${temp.toFixed()}°`}</span></p>
         </div>
         </div>
         </div>
@@ -30,11 +31,11 @@ function EightDay({ weather:
 
    
         <div className='weekendCardTop'>
-            <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
-            <p>{`${temp}`}°</p>
-            <p>{`${details}`}</p>
-            <p>High {`${temp_max}`}°</p>
-            <p>Low {`${temp_min}`}°</p>
+            <img src={iconUrl(icon)} alt='weather-icon'></img>
+            <p>{`${temp.toFixed()}°`}</p>
+            <p>{details}</p>
+            <p>High <span>{`${temp_max.toFixed()}°`}</span></p>
+            <p>Low <span>{`${temp_min.toFixed()}}°`}</span></p>
        </div>
        </div>
        )}
