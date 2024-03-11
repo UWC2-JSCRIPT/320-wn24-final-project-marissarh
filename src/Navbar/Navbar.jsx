@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HomeIcon from '../Img/HomeIcon.png'
 import './Navbar.css'
 
+
 function Navbar({units, setUnits}){
     const handleUnitsChange = (e) =>{
         const selectedUnit = e.currentTarget.name
@@ -14,11 +15,7 @@ function Navbar({units, setUnits}){
             <div className='navbar'>
              <div className='nav-logo'>
                 <Link to ="/"><img src={HomeIcon}/></Link>
-                <div className='tempUnits'>
-                <button name="metric" onClick={handleUnitsChange}>°C</button>
-                
-                <button name="imperial" onClick={handleUnitsChange}>°F</button>
-                </div> 
+              
                 </div>
                 <ul className='nav-menu'>
                 <li>

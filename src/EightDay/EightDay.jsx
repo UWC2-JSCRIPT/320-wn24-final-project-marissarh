@@ -15,7 +15,7 @@ function EightDay({ weather:
         <div>
         <div>
         <h2>8-Day Sky Forecast</h2>
-        <p className='city'>{`${name}`}</p>
+        <p className='city'>{`${name}, ${country}`}</p>
         <div className='displayData'>
         <div className='date'>
         <h3>{formatToLocalTime(dt, timezone)}</h3>
@@ -31,10 +31,10 @@ function EightDay({ weather:
    
         <div className='weekendCardTop'>
             <img src="https://img.icons8.com/ios-filled/50/sun--v1.png"></img>
-            <p>18°C</p>
-            <p>Cloudy</p>
-            <p>High 20°C</p>
-            <p>Low°C</p>
+            <p>{`${temp}`}°</p>
+            <p>{`${details}`}</p>
+            <p>High {`${temp_max}`}°</p>
+            <p>Low {`${temp_min}`}°</p>
        </div>
        </div>
        )}

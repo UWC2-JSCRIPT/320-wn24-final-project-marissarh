@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './Home.css'
 
-function Home({setSearch}) {
+function Home({}) {
+    const [search, setsearch] = useState({q:''})
     const [city, setCity] = useState("");
    const handleSearchClick = () =>{
-
-    if (city !=="") setSearch({q:city});
+    if (city !=="") setsearch({q:city});
    };
 
     return (

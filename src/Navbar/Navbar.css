@@ -3,6 +3,7 @@
     justify-content:space-around;
     padding: 10px;
     box-shadow: 0 2px 4px -2px rgb(26, 26, 26);
+    background-color: rgb(211, 242, 249);
 
 }
 .nav-logo{
@@ -54,5 +55,7 @@
 }
 a{
     color: rgb(109, 109, 248);
-
+    text-decoration: none;
 }
+
+
