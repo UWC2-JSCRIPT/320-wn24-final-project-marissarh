@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import HomeIcon from './Img/HomeIcon.png'
 import Home from './Home/Home'
-import Hourly from "./Hourly/Hourly";
 import EightDay from "./EightDay/EightDay";
 import FetchedData from './FetchedData/FetchedData';
 import getFormattedWeatherData from "./FetchedData/FetchedData";
@@ -66,10 +65,9 @@ function App() {
             
             
         <Routes>
-          <Route path="/" Component={Home} setSearch={setSearch} element={<FetchedData />}>
+          <Route path="/" Component={Home} setSearch={setSearch} >
             </Route>
-          <Route path="/hourly" Component={Hourly} title="hourly forecas"element={<FetchedData  />}>
-            </Route>     
+               
           <Route path="/eight-day" Component={EightDay} title="daily forecast" element={<FetchedData />}>
             </Route>
          
