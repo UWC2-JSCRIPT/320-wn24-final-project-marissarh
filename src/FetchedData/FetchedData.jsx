@@ -22,11 +22,12 @@ const formatCurrentWeather = (data)=>{
         name,
         weather,
         dt,
+        sys:{country},
     } = data
 
     const {main: details, icon} = weather[0]
 
-    return{ lat, lon, temp, temp_min, temp_max, name, weather, dt}
+    return{ lat, lon, temp, temp_min, temp_max, name, weather, dt, country}
 };
 
 const formatForecastWeather =(data) =>{

@@ -35,7 +35,7 @@ function App() {
         <TimeandLocation  weather={weather} />
     <WeatherDisplay weather={weather} />
     <Home title="Hourly Sky Forecast" items={weather.hourly}/>
-    <Home dayTitle="Five-Day Sky Forecast" items={weather.daily}/></div>
+    <Home title="Five-Day Sky Forecast" items={weather.daily}/></div>
     )}
    
     </>
