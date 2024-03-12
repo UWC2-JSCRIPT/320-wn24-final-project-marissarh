@@ -3,7 +3,6 @@ import './Home.css'
 
 
 function Home({title, items}){
-    console.log(items);
     return (
     <div>
         
