@@ -7,6 +7,7 @@ import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
 
 import getFormattedWeatherData from "./FetchedData/FetchedData";
 import { useEffect, useState } from "react";
+import PageNotFound from "./404Page";
 
 
 
@@ -29,14 +30,20 @@ function App() {
 
   return (
   <>
-    <NavBar setQuery={setQuery} units={units} setUnits={setUnits}/>
+  <NavBar setQuery={setQuery} units={units} setUnits={setUnits}/>
+  
     {weather && (
       <div> 
         <TimeandLocation  weather={weather} />
     <WeatherDisplay weather={weather} />
     <Home title="Hourly Sky Forecast" items={weather.hourly} />
     <Home title="Five-Day Sky Forecast" items={weather.daily}/></div>
-    )}
+    )}<Router>
+    <Routes>
+      <Route exact path="/home"/>
+  <Route path="/404"
+      element={<PageNotFound/>}/></Routes>
+   </Router>
    
     </>
   )
