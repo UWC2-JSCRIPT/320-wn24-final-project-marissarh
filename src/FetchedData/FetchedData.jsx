@@ -25,9 +25,9 @@ const formatCurrentWeather = (data)=>{
         sys:{country},
     } = data
 
-    const {main: details, icon} = weather[0]
+    const {description, icon} = weather[0]
 
-    return{ lat, lon, temp, temp_min, temp_max, name, weather, dt, country}
+    return{ lat, lon, temp, temp_min, temp_max, name, weather, dt, country, description, icon}
 };
 
 const formatForecastWeather =(data) =>{
@@ -36,14 +36,18 @@ const formatForecastWeather =(data) =>{
         return{
             title: formatToLocalTime(d.dt, timezone, 'ccc'),
             temp: d.temp.day,
-            icon: d.weather[0].icon
+            icon: d.weather[0].icon,
+            condition: d.weather[0].description
         }
     });
     hourly = hourly.slice(1,6).map(d => {
         return{
             title: formatToLocalTime(d.dt, timezone, 'hh:mm a'),
             temp: d.temp,
-            icon: d.weather[0].icon
+            icon: d.weather[0].icon,
+            condition: d.weather[0].description
+            
+           
         };
     });
     return { timezone, daily, hourly};
@@ -64,6 +68,7 @@ const formatToLocalTime =
 DateTime.fromSeconds(secs).setZone(zone).toFormat(format); 
 
 const iconCode = (code) => `https://openweathermap.org/img/wn/${code}@2x.png`
+
 
 export default getFormattedWeatherData;
 export {formatToLocalTime, iconCode}

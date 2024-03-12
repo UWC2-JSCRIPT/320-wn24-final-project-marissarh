@@ -13,7 +13,7 @@ import PageNotFound from "./404Page";
 
 
 function App() {
-  const [query, setQuery] = useState({q:'paris'})
+  const [query, setQuery] = useState({q:'Seattle'})
   const [units, setUnits] = useState('imperial')
   const [weather, setWeather] = useState(null)
 
@@ -40,7 +40,7 @@ function App() {
     <Home title="Five-Day Sky Forecast" items={weather.daily}/></div>
     )}<Router>
     <Routes>
-      <Route exact path="/home"/>
+      <Route exact path="/"/>
   <Route path="/404"
       element={<PageNotFound/>}/></Routes>
    </Router>

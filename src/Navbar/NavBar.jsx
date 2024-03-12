@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom";
-import HomeIcon from '../Img/HomeIcon.png'
+import { useState } from 'react'
+
 import './NavBar.css'
 
 function NavBar({setQuery, units, setUnits}) {
@@ -20,7 +19,7 @@ function NavBar({setQuery, units, setUnits}) {
      <div className='nav-logo'>
       
       <div className='tempUnits'>
-<button name="metric"  onClick={handleUnitsChange}>°C</button>
+<button name="metric"  data-testedid="button" onClick={handleUnitsChange}>°C</button>
 <button name="imperial" onClick={handleUnitsChange}>°F</button>
 </div> </div>
 <div className='container'>
@@ -31,6 +30,7 @@ function NavBar({setQuery, units, setUnits}) {
 <input 
 type="text" 
 placeholder="Enter Location" 
+
 value={city}
 onChange= {(e) =>
     setCity(e.currentTarget.value)} className='location-bar'/></div> <br/>
@@ -42,5 +42,4 @@ onChange= {(e) =>
     </nav>
     </div>
     );
-  }
-export default NavBar
+  }export default NavBar
