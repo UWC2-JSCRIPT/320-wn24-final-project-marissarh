@@ -19,27 +19,26 @@ function NavBar({setQuery, units, setUnits}) {
      <div className='nav-logo'>
       
       <div className='tempUnits'>
-<button name="metric"  data-testedid="button" onClick={handleUnitsChange}>°C</button>
+<button name="metric"   onClick={handleUnitsChange}>°C</button>
 <button name="imperial" onClick={handleUnitsChange}>°F</button>
 </div> </div>
 <div className='container'>
     <div className='search-box'> 
     <div className='header'>
-<h2>Sky Forecast</h2>
+<h2 >Sky Forecast</h2>
 <div className='search'>
 <input 
 type="text" 
 placeholder="Enter Location" 
-
 value={city}
 onChange= {(e) =>
     setCity(e.currentTarget.value)} className='location-bar'/></div> <br/>
-    <button className='search-btn' onClick={handleSearchClick}>Search</button>
+    <button className='search-btn' data-testid='searchButton'  onClick={handleSearchClick}>Search</button>
 </div> </div>
 </div>
     </div>
-    
     </nav>
     </div>
-    );
-  }export default NavBar
+    
+    );}
+    export default NavBar
