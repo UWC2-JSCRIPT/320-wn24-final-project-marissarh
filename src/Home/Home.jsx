@@ -3,6 +3,7 @@ import './Home.css'
 import React from 'react'
 
 function Home({title, items}){
+    console.log(items);
     return (
     <div>
         
@@ -13,10 +14,12 @@ function Home({title, items}){
             <div key={index}>
         <ul className='weather-cards'>
             <li className='card'>
-            <h3 className='time'>{items.title}</h3>
-        <div className='tempImg'><img src={iconCode(item.icon)} alt="weather-icon"></img></div>
+            <h3 className='time'>{item.title}</h3>
+        <div><img src={iconCode(item.icon)} alt="weather-icon"></img></div>
         <h3 className='currentTemp'>{`${item.temp.toFixed()}`}°</h3>
-        <h3>Cloudy</h3></li>
+        </li>
+        
+        
         </ul>
        </div>
        ))}
@@ -29,5 +32,4 @@ function Home({title, items}){
        
   );
         }
-
 export default Home
