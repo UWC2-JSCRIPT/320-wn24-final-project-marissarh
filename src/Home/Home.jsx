@@ -1,40 +1,35 @@
-import React, { useState } from 'react'
+import { iconCode } from '../FetchedData/FetchedData';
+import './Home.css'
+import React from 'react'
 
-
-
-const API_KEY = '7649b28c3542d28d3b3866ddf149b2aa'
-
-const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=`
-
-
-function Home() {
-
-    const [location, setLocation] = useState('');
-    const [weatherData, setWeatherData] = useState(null);
-    
-    const searchWeather = async () => {
-        try {
-            const response = await fetch (`${API_URL}${location}&appid=${API_KEY}`)
-            const data = await response.json();
-            setWeatherData(data);
-        } catch (error) {
-            console.log('Error fetching weather data', error);
-        }
-        };
-
+function Home({title, items}){
+    console.log(items);
     return (
     <div>
-        <h2>Home</h2>
-        <input 
-        type="text" 
-        placeholder="Enter Location" 
-        value={location} 
-        onChange= {(e) => 
-            setLocation(e.target.value)} />
-            <button onClick={searchWeather}>Search</button>
-            {weatherData && <WeatherCard data={weatherData}/>}
+        
+            <div>
+        <div className='hourly-weather'>
+        <h2>{title}</h2>
+        {items.map((item,index)=>(
+            <div key={index}>
+        <ul className='weather-cards'>
+            <li className='card'>
+            <h3 className='time'>{item.title}</h3>
+        <div><img src={iconCode(item.icon)} alt="weather-icon"></img></div>
+        <h3 className='currentTemp'>{`${item.temp.toFixed()}`}°</h3>
+        </li>
+        
+        
+        </ul>
+       </div>
+       ))}
+        </div></div>
+        
+      
+        
+        
         </div>
+       
   );
-}
-
+        }
 export default Home

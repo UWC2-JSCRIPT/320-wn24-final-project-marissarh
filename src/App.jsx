@@ -1,32 +1,51 @@
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from './Navbar/Navbar'
-import Home from './Home/Home'
-import Hourly from "./Hourly/Hourly";
-import EightDay from "./EightDay/EightDay";
-import Weekend from "./Weekend/Weekend";
+import NavBar from '../src/Navbar/NavBar'
+import TimeandLocation from "./TimeandLocation";
+import Home from "./Home/Home";
+import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
+
+import getFormattedWeatherData from "./FetchedData/FetchedData";
+import { useEffect, useState } from "react";
+import PageNotFound from "./404Page";
 
 
 
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/hourly" Component={Hourly}>
-            </Route>
-          <Route path="/eight-day" Component={EightDay}>
-            </Route>
-          <Route path="/weekend" Component={Weekend}>
-            </Route>
-          <Route path="/" Component={Home}>
-            </Route>
-        </Routes>
-      </div>
-    </Router>
+  const [query, setQuery] = useState({q:'paris'})
+  const [units, setUnits] = useState('imperial')
+  const [weather, setWeather] = useState(null)
+
+  useEffect(() => {
+     const fetchWeather = async() => {
+   await getFormattedWeatherData({...query, units})
+   .then((data)=> {
+    setWeather(data);
+   });
     
+  };
+  fetchWeather();
+  }, [query, units])
+
+  return (
+  <>
+  <NavBar setQuery={setQuery} units={units} setUnits={setUnits}/>
+  
+    {weather && (
+      <div> 
+        <TimeandLocation  weather={weather} />
+    <WeatherDisplay weather={weather} />
+    <Home title="Hourly Sky Forecast" items={weather.hourly} />
+    <Home title="Five-Day Sky Forecast" items={weather.daily}/></div>
+    )}<Router>
+    <Routes>
+      <Route exact path="/home"/>
+  <Route path="/404"
+      element={<PageNotFound/>}/></Routes>
+   </Router>
+   
+    </>
   )
 }
 

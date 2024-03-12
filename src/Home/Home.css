@@ -1,0 +1,39 @@
+
+
+.hourly-weather h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hourly-weather ul li{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    background-color: rgb(211, 242, 249);
+    justify-content: center;
+    margin: 10px;
+
+  }
+  .hourly-weather{
+    margin: 40px;
+    
+  }
+  .day-forecast h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .five-day-cards {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    justify-content: center;
+    background-color: rgb(211, 242, 249);
+    margin-bottom: 40px;
+    padding: 40px;
+  }
+  .day-forecast{
+    margin: 40px;
+  }
+  

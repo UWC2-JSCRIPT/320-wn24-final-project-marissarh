@@ -1,0 +1,24 @@
+.current-weather h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.current-data{
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    background-color: rgb(211, 242, 249);
+}
+.current-weather h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    
+    
+}
+.current-weather ul{
+    list-style: none;
+}
