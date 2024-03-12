@@ -1,30 +1,43 @@
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./Navbar/NavBar";
+import NavBar from '../src/Navbar/NavBar'
 import TimeandLocation from "./TimeandLocation";
 import Home from "./Home/Home";
 import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
 
 import getFormattedWeatherData from "./FetchedData/FetchedData";
+import { useEffect, useState } from "react";
 
 
 
 
 function App() {
- const fetchWeather = async() => {
-    const data = await getFormattedWeatherData({q:'Berlin'});
-    console.log(data);
+  const [query, setQuery] = useState({q:'paris'})
+  const [units, setUnits] = useState('imperial')
+  const [weather, setWeather] = useState(null)
+
+  useEffect(() => {
+     const fetchWeather = async() => {
+   await getFormattedWeatherData({...query, units})
+   .then((data)=> {
+    setWeather(data);
+   });
+    
   };
   fetchWeather();
-   
+  }, [query, units])
+
   return (
   <>
-    <NavBar/>
-    
-    <TimeandLocation />
-    <WeatherDisplay />
-    <Home title="Hourly Sky Forecast"/>
-    <Home dayTitle="Five-Day Sky Forecast"/>
+    <NavBar setQuery={setQuery} units={units} setUnits={setUnits}/>
+    {weather && (
+      <div> 
+        <TimeandLocation  weather={weather} />
+    <WeatherDisplay weather={weather} />
+    <Home title="Hourly Sky Forecast" items={weather.hourly}/>
+    <Home dayTitle="Five-Day Sky Forecast" items={weather.daily}/></div>
+    )}
+   
     </>
   )
 }

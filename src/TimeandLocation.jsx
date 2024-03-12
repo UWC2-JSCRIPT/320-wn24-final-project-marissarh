@@ -1,10 +1,11 @@
 import React from 'react'
+import { formatToLocalTime } from './FetchedData/FetchedData'
 
-function TimeandLocation() {
+function TimeandLocation({weather: {dt, timezone}}) {
   return (
     <div>
         <div>
-            Monday, May 14, 2023 | Local Time: 12:26 PM
+           {formatToLocalTime (dt, timezone)}
         </div>
     </div>
   )

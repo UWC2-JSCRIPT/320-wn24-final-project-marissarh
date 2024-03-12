@@ -1,7 +1,8 @@
+import { iconCode } from '../FetchedData/FetchedData';
 import './Home.css'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-function Home({title, dayTitle}){
+function Home({title, dayTitle, items}){
     return (
     <div>
         
@@ -10,9 +11,9 @@ function Home({title, dayTitle}){
         <h2>{title}</h2>
         <ul className='weather-cards'>
             <li className='card'>
-            <h3 className='time'>4:00<span>pm</span></h3>
-        <div className='tempImg'><img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon"></img></div>
-        <h3 className='currentTemp'>75°</h3>
+            <h3 className='time'>{items.title}</h3>
+        <div className='tempImg'><img src={iconCode(items.icon)} alt="weather-icon"></img></div>
+        <h3 className='currentTemp'>{`${items.temp.toFixed()}`}°</h3>
         <h3>Cloudy</h3></li>
         <li className='card'>
             <h3 className='time'>5:00<span>pm</span></h3>
