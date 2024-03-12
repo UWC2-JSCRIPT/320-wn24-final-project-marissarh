@@ -1,16 +1,32 @@
 import './Home.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomeIcon from '../Img/HomeIcon.png'
-import {getWeatherData}from './FetchedData/FetchedData';
-import { useEffect, useState } from "react";
 
-const API_KEY = '7649b28c3542d28d3b3866ddf149b2aa'
-
-const API_URL = `https://api.openweathermap.org/data/2.5`
+const API_KEY = process.env.WEATHER_API_KEY
 
 
-function Home() {
+const API_URL = process.env.WEATHER_APP_API_URL 
+
+
+const [lat, setLat] = useState([]);
+const [long, setLong]= useState([]);
+useEffect(()=>{
+    navigator.geolocation.getCurrentPosition(function(position) {
+        setLat(position.coords.latitude);
+        setLong(position.coords.longitude);
+    
+});
+console.log("Latitude is:", lat)
+console.log("Longitude is:", long)}, [lat,long]);
+
+ await fetch(`${API_URL}/weather/?lat=${lat}&lon=${lon}&exclude=alerts,minutely&units=imperial&appid=${API_KEY}`)
+        .then(res =>res.json()).then(result =>{
+             
+            showWeatherData(data);
+            console.log(data)});
+           
+{/*function Home() {
     const [search, setSearch] = useState({q:'berlin'})
     const [units, setUnits] = useState('metric')
     const [city, setCity] = useState("");
@@ -24,19 +40,12 @@ function Home() {
       if(units !== selectedUnit) setUnits(selectedUnit);
   };
     const [weather, setWeather] = useState({});
-    navigator.geolocation.getCurrentPosition((success) =>{
+   
         let {lat, lon} = success.coords;
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&units=imperial&appid=${API_KEY}`)
-        .then(res =>res.json()).then(data =>{
-             console.log(data)
-            showWeatherData(data);
-           
+        
             
-        })
-})
+        },[lat, lon])*/}
 
-    
-  
     return (
     <div>
           <div>
@@ -170,6 +179,6 @@ function Home() {
         </div>
        
   );
-}
+        }
 
 export default Home

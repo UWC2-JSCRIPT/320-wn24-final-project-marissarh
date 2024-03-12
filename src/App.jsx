@@ -15,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/" Component={Home}  >
             </Route>     
-            
         </Routes> </div>
       </div>
     </Router>
