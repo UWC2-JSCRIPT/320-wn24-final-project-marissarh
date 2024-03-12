@@ -1,0 +1,21 @@
+.current-weather h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-data{
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    
+}
+.current-weather h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.current-weather ul{
+    list-style: none;
+}

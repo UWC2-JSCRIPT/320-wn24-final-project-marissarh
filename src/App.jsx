@@ -1,24 +1,30 @@
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Home from './Home/Home'
+import NavBar from "./Navbar/NavBar";
+import TimeandLocation from "./TimeandLocation";
+import Home from "./Home/Home";
+import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
+import getWeatherData from'./FetchedData/FetchedData'
 
 
 
 
 function App() {
+ const fetchWeather = async() => {
+    const data = await getWeatherData("weather", {q:'Berlin'});
+    console.log(data);
+  };
+  fetchWeather();
    
   return (
-    <Router>
-      <div>
-          <div>
-        <Routes>
-          <Route path="/" Component={Home}  >
-            </Route>     
-        </Routes> </div>
-      </div>
-    </Router>
+  <>
+    <NavBar/>
     
+    <TimeandLocation />
+    <WeatherDisplay />
+    <Home title="Hourly Sky Forecast"/>
+    <Home dayTitle="Five-Day Sky Forecast"/>
+    </>
   )
 }
 
