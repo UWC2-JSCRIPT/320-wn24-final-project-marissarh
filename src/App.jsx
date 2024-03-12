@@ -38,7 +38,7 @@ function App() {
       path="/" element={<NavBar setQuery={setQuery} units={units} setUnits={setUnits}/>}/>
   <Route path="/404"
       element={<PageNotFound/>}/>
-      </Routes></Router>
+      </Routes>
     {weather && (
       <div> 
         <TimeandLocation  weather={weather} />
@@ -46,7 +46,7 @@ function App() {
     <Home title="Hourly Sky Forecast" items={weather.hourly} />
     <Home title="Five-Day Sky Forecast" items={weather.daily}/></div>
     )}
-    
+    </Router>
    
     </>
   )
