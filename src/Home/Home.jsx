@@ -1,6 +1,6 @@
 import { iconCode } from '../FetchedData/FetchedData';
 import './Home.css'
-import React from 'react'
+
 
 function Home({title, items}){
     console.log(items);
@@ -17,9 +17,10 @@ function Home({title, items}){
             <h3 className='time'>{item.title}</h3>
         <div><img src={iconCode(item.icon)} alt="weather-icon"></img></div>
         <h3 className='currentTemp'>{`${item.temp.toFixed()}`}°</h3>
-        </li>
-        
-        
+        <p>{item.condition}</p>
+       
+       
+       </li> 
         </ul>
        </div>
        ))}
