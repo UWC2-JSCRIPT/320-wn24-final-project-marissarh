@@ -4,14 +4,15 @@ import NavBar from "./Navbar/NavBar";
 import TimeandLocation from "./TimeandLocation";
 import Home from "./Home/Home";
 import WeatherDisplay from "./WeatherDisplay/WeatherDisplay";
-import getWeatherData from'./FetchedData/FetchedData'
+
+import getFormattedWeatherData from "./FetchedData/FetchedData";
 
 
 
 
 function App() {
  const fetchWeather = async() => {
-    const data = await getWeatherData("weather", {q:'Berlin'});
+    const data = await getFormattedWeatherData({q:'Berlin'});
     console.log(data);
   };
   fetchWeather();
