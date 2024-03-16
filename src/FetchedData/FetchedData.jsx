@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import PropTypes from 'prop-types';
 
 
 
@@ -69,6 +70,22 @@ const formatToLocalTime =
 DateTime.fromSeconds(secs).setZone(zone).toFormat(format); 
 
 const iconCode = (code) => `https://openweathermap.org/img/wn/${code}@2x.png`
+
+getFormattedWeatherData.propTypes ={
+    searchParams: PropTypes.shape({
+        units: PropTypes.string.isRequired
+    }).isRequired,
+};
+
+formatToLocalTime.propTypes ={
+    secs: PropTypes.number.isRequired,
+    zone: PropTypes.string.isRequired,
+    format: PropTypes.string,
+};
+
+iconCode.propTypes={
+    code: PropTypes.string.isRequired,
+};
 
 
 export default getFormattedWeatherData;
