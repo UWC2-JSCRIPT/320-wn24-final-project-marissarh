@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import './NavBar.css'
 
@@ -41,4 +42,9 @@ onChange= {(e) =>
     </div>
     
     );}
+    NavBar.propTypes = {
+      setQuery: PropTypes.func.isRequired,
+      units: PropTypes.string.isRequired,
+      setUnits: PropTypes.func.isRequired
+    };
     export default NavBar
