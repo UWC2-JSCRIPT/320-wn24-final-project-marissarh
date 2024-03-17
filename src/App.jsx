@@ -8,11 +8,6 @@ import PageNotFound from "./404Page";
 import getFormattedWeatherData from "./FetchedData/FetchedData";
 import { useEffect, useState } from "react";
 
-
-
-
-
-
 function App() {
   const [query, setQuery] = useState({q:'Seattle'})
   const [units, setUnits] = useState('imperial')
