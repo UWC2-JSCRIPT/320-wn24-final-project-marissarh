@@ -1,7 +1,7 @@
 import React from 'react'
 import './WeatherDisplay.css'
 import { iconCode } from '../FetchedData/FetchedData'
-
+import PropTypes from 'prop-types'
 function WeatherDisplay({
   weather:{ description, icon, temp, temp_min, temp_max, name, country}}) 
   {
@@ -25,5 +25,17 @@ function WeatherDisplay({
     </div>
   )
 }
+WeatherDisplay.propTypes ={
+  weather: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    temp: PropTypes.number.isRequired,
+    temp_min: PropTypes.number.isRequired,
+    temp_max: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+  }).isRequired
+
+};
 
 export default WeatherDisplay

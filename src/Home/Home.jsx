@@ -1,5 +1,6 @@
 import { iconCode } from '../FetchedData/FetchedData';
-import './Home.css'
+import './Home.css';
+import PropTypes from 'prop-types';
 
 
 function Home({title, items}){
@@ -32,4 +33,15 @@ function Home({title, items}){
        
   );
         }
+        Home.propTypes ={
+            title:PropTypes.string.isRequired,
+            items: PropTypes.arrayOf(
+                PropTypes.shape({
+                    title: PropTypes.string.isRequired,
+                    icon: PropTypes.string.isRequired,
+                    temp: PropTypes.number.isRequired,
+                    condition: PropTypes.string.isRequired
+                }).isRequired
+            ).isRequired
+        };
 export default Home
